@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "UnitConvertor": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

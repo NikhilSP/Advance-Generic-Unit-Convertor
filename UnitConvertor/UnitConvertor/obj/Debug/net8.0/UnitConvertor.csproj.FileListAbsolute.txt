@@ -1,0 +1,5 @@
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.AssemblyInfoInputs.cache
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.AssemblyInfo.cs
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.csproj.CoreCompileInputs.cache
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.sourcelink.json

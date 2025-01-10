@@ -13,6 +13,11 @@ internal class Program
         var convertor = new MeasurementConvertor();
 
         var result = convertor.ConvertTo<Meter, Feet>(first);
-
+        
+        var speedA = new  Measurement<CompoundUnit<Meter, Second>>(10);
+        var speedB = new  Measurement<CompoundUnit<Meter, Second>>(10);
+        
+        var acceleration = new  Measurement<CompoundUnit<CompoundUnit<Meter, Second>, Second>>(5) ;
+        
     }
 }

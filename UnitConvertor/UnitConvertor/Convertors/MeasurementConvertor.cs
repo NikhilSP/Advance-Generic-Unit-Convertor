@@ -9,12 +9,13 @@ namespace UnitConvertor.Convertors;
 // Uses reflection for nested compound units
 public class MeasurementConvertor
 {
-    private MethodInfo _convertToMethod;
+    private readonly MethodInfo _convertCompoundDivideUnitTo;
+    private readonly MethodInfo _convertCompoundMultiplyUnitTo;
 
     public MeasurementConvertor()
     {
-        var convertToMethod = typeof(MeasurementConvertor).GetMethod("ConvertCompoundUnitTo");
-        _convertToMethod = convertToMethod ?? throw new Exception();
+        _convertCompoundDivideUnitTo = typeof(MeasurementConvertor).GetMethod("ConvertCompoundDivideUnitTo") ?? throw new Exception();
+        _convertCompoundMultiplyUnitTo = typeof(MeasurementConvertor).GetMethod("ConvertCompoundMultiplyUnitTo") ?? throw new Exception();
     }
 
     public Measurements<T2> ConvertTo<T1, T2>(Measurements<T1> measurement)
@@ -25,6 +26,44 @@ public class MeasurementConvertor
         return convertor is null
             ? new NotDefinedMeasurements<T2>()
             : new Measurements<T2>(convertor(measurement.Value));
+    }
+    
+    public Measurements<CompoundUnitDivide<T3, T4>> ConvertCompoundDivideUnitTo<T1, T2, T3, T4>(
+        Measurements<CompoundUnitDivide<T1, T2>> measurement)
+        where T1 : IUnit
+        where T2 : IUnit
+        where T3 : IUnit
+        where T4 : IUnit
+    {
+        var firstFactor = GetConversionFactor<T1, T3>();
+        var secondFactor = GetConversionFactor<T2, T4>();
+
+        if (firstFactor is NotDefinedMeasurements<T3> || secondFactor is NotDefinedMeasurements<T4>)
+        {
+            return new NotDefinedMeasurements<CompoundUnitDivide<T3, T4>>();
+        }
+
+        return new Measurements<CompoundUnitDivide<T3, T4>>(measurement.Value *
+            firstFactor.Value / secondFactor.Value);
+    }
+    
+    public Measurements<CompoundUnitMultiply<T3, T4>> ConvertCompoundMultiplyUnitTo<T1, T2, T3, T4>(
+        Measurements<CompoundUnitMultiply<T1, T2>> measurement)
+        where T1 : IUnit
+        where T2 : IUnit
+        where T3 : IUnit
+        where T4 : IUnit
+    {
+        var firstFactor = GetConversionFactor<T1, T3>();
+        var secondFactor = GetConversionFactor<T2, T4>();
+
+        if (firstFactor is NotDefinedMeasurements<T3> || secondFactor is NotDefinedMeasurements<T4>)
+        {
+            return new NotDefinedMeasurements<CompoundUnitMultiply<T3, T4>>();
+        }
+
+        return new Measurements<CompoundUnitMultiply<T3, T4>>(measurement.Value *
+            firstFactor.Value * secondFactor.Value);
     }
 
     public Measurements<CompoundUnit<T3, T4>> ConvertCompoundUnitTo<T1, T2, T3, T4>(
@@ -65,7 +104,7 @@ public class MeasurementConvertor
 
                 Type[] typeArgs = { firstTypeT1, secondTypeT1, firstTypeT3, secondTypeT3 };
 
-                MethodInfo genericConvertToMethod = _convertToMethod.MakeGenericMethod(typeArgs);
+                MethodInfo genericConvertToMethod = _convertCompoundDivideUnitTo.MakeGenericMethod(typeArgs);
 
                 object compoundUnitT1 = Activator.CreateInstance(
                     typeof(CompoundUnitDivide<,>).MakeGenericType(firstTypeT1, secondTypeT1)) ?? throw new Exception();
@@ -106,7 +145,7 @@ public class MeasurementConvertor
 
                 Type[] typeArgs = { firstTypeT1, secondTypeT1, firstTypeT3, secondTypeT3 };
 
-                MethodInfo genericConvertToMethod = _convertToMethod.MakeGenericMethod(typeArgs);
+                MethodInfo genericConvertToMethod = _convertCompoundMultiplyUnitTo.MakeGenericMethod(typeArgs);
 
                 object compoundUnitT1 = Activator.CreateInstance(
                                             typeof(CompoundUnitMultiply<,>).MakeGenericType(firstTypeT1,

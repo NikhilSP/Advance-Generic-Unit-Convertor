@@ -27,7 +27,7 @@ internal class Program
             new CompoundUnitDivide<CompoundUnitDivide<CompoundUnitDivide<Meter, Second>, Second>, Second>());
 
         convertor
-            .ConvertCompoundUnitTo<CompoundUnitDivide<CompoundUnitDivide<Meter, Second>, Second>, Second,
+            .ConvertCompoundDivideUnitTo<CompoundUnitDivide<CompoundUnitDivide<Meter, Second>, Second>, Second,
                 CompoundUnitDivide<CompoundUnitDivide<Feet, Second>, Second>, Second>(value1);
     }
 }

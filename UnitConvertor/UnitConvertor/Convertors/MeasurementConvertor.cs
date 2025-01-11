@@ -28,31 +28,44 @@ public class MeasurementConvertor
     }
 
     public Measurements<CompoundUnit<T3, T4>> ConvertCompoundUnitTo<T1, T2, T3, T4>(
-        Measurements<CompoundUnitDivide<T1, T2>> measurement)
+        Measurements<CompoundUnit<T1, T2>> measurement)
         where T1 : IUnit
         where T2 : IUnit
         where T3 : IUnit
         where T4 : IUnit
     {
-        if (typeof(T1).IsGenericType && typeof(T1).GetGenericTypeDefinition() == typeof(CompoundUnitDivide<,>))
+        var firstFactor = GetConversionFactor<T1, T3>();
+        var secondFactor = GetConversionFactor<T2, T4>();
+
+        if (firstFactor is NotDefinedMeasurements<T3> || secondFactor is NotDefinedMeasurements<T4>)
         {
-            if (typeof(T3).IsGenericType && typeof(T3).GetGenericTypeDefinition() == typeof(CompoundUnitDivide<,>))
+            return new NotDefinedMeasurements<CompoundUnit<T3, T4>>();
+        }
+
+        return new Measurements<CompoundUnit<T3, T4>>(measurement.Value *
+                                                              firstFactor.Value / secondFactor.Value);
+    }
+
+    private Measurements<TUnit2> GetConversionFactor<TUnit1, TUnit2>()
+        where TUnit1 : IUnit
+        where TUnit2 : IUnit
+    {
+        if (typeof(TUnit1).IsGenericType && typeof(TUnit1).GetGenericTypeDefinition() == typeof(CompoundUnitDivide<,>))
+        {
+            if (typeof(TUnit2).IsGenericType &&
+                typeof(TUnit2).GetGenericTypeDefinition() == typeof(CompoundUnitDivide<,>))
             {
-                Type[] innerTypesT1 = typeof(T1).GetGenericArguments();
+                Type[] innerTypesT1 = typeof(TUnit1).GetGenericArguments();
                 Type firstTypeT1 = innerTypesT1[0];
                 Type secondTypeT1 = innerTypesT1[1];
 
-                Type[] innerTypesT3 = typeof(T3).GetGenericArguments();
+                Type[] innerTypesT3 = typeof(TUnit2).GetGenericArguments();
                 Type firstTypeT3 = innerTypesT3[0];
                 Type secondTypeT3 = innerTypesT3[1];
 
                 Type[] typeArgs = { firstTypeT1, secondTypeT1, firstTypeT3, secondTypeT3 };
 
                 MethodInfo genericConvertToMethod = _convertToMethod.MakeGenericMethod(typeArgs);
-
-                // Create instances of the inner unit types
-                object firstTypeT1Instance = Activator.CreateInstance(firstTypeT1) ?? throw new Exception();
-                object secondTypeT1Instance = Activator.CreateInstance(secondTypeT1) ?? throw new Exception();
 
                 object compoundUnitT1 = Activator.CreateInstance(
                     typeof(CompoundUnitDivide<,>).MakeGenericType(firstTypeT1, secondTypeT1)) ?? throw new Exception();
@@ -64,36 +77,63 @@ public class MeasurementConvertor
                     typeof(Measurements<>).MakeGenericType(compoundUnitT1Type),
                     new object[] { 1, compoundUnitT1 })!;
 
-                object result = genericConvertToMethod.Invoke(this, new object[]
+                var result = genericConvertToMethod.Invoke(this, new object[]
                 {
                     measurementsInstance
                 })!;
+
+                double value = (double)result.GetType().GetProperty("Value")!.GetValue(result)!;
+
+                return new Measurements<TUnit2>(value);
             }
-            else
-            {
-                // type mismatch
-            }
+
+            return new NotDefinedMeasurements<TUnit2>();
         }
 
-        var firstFactor = ConvertTo<T1, T3>(new Measurements<T1>(1));
-        var secondFactor = ConvertTo<T2, T4>(new Measurements<T2>(1));
-
-        if (firstFactor is NotDefinedMeasurements<T3> || secondFactor is NotDefinedMeasurements<T4>)
+        if (typeof(TUnit1).IsGenericType &&
+            typeof(TUnit1).GetGenericTypeDefinition() == typeof(CompoundUnitMultiply<,>))
         {
-            return new NotDefinedMeasurements<CompoundUnit<T3, T4>>();
+            if (typeof(TUnit2).IsGenericType &&
+                typeof(TUnit2).GetGenericTypeDefinition() == typeof(CompoundUnitMultiply<,>))
+            {
+                Type[] innerTypesT1 = typeof(TUnit1).GetGenericArguments();
+                Type firstTypeT1 = innerTypesT1[0];
+                Type secondTypeT1 = innerTypesT1[1];
+
+                Type[] innerTypesT3 = typeof(TUnit2).GetGenericArguments();
+                Type firstTypeT3 = innerTypesT3[0];
+                Type secondTypeT3 = innerTypesT3[1];
+
+                Type[] typeArgs = { firstTypeT1, secondTypeT1, firstTypeT3, secondTypeT3 };
+
+                MethodInfo genericConvertToMethod = _convertToMethod.MakeGenericMethod(typeArgs);
+
+                object compoundUnitT1 = Activator.CreateInstance(
+                                            typeof(CompoundUnitMultiply<,>).MakeGenericType(firstTypeT1,
+                                                secondTypeT1)) ??
+                                        throw new Exception();
+
+                // Get the type of compoundUnitT1
+                Type compoundUnitT1Type = compoundUnitT1.GetType();
+
+                object measurementsInstance = Activator.CreateInstance(
+                    typeof(Measurements<>).MakeGenericType(compoundUnitT1Type),
+                    new object[] { 1, compoundUnitT1 })!;
+
+                var result = genericConvertToMethod.Invoke(this, new object[]
+                {
+                    measurementsInstance
+                })!;
+
+                double value = (double)result.GetType().GetProperty("Value")!.GetValue(result)!;
+
+                return new Measurements<TUnit2>(value);
+            }
+
+            return new NotDefinedMeasurements<TUnit2>();
         }
 
-        return new Measurements<CompoundUnit<T3, T4>>(measurement.Value *
-            firstFactor.Value / secondFactor.Value);
-
-        // return operation switch
-        // {
-        //     CompoundUnitOperation.Divide => new Measurement<CompoundUnit<T3, T4>>(measurement.Value *
-        //         firstFactor.Value / secondFactor.Value),
-        //     CompoundUnitOperation.Multiply => new Measurement<CompoundUnit<T3, T4>>(measurement.Value *
-        //         firstFactor.Value * secondFactor.Value),
-        //     _ => new NotDefinedMeasurement<CompoundUnit<T3, T4>>()
-        // };
+        return ConvertTo<TUnit1, TUnit2>(new Measurements<TUnit1>(1));
     }
 
 

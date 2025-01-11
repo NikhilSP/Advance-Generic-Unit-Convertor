@@ -18,6 +18,10 @@ internal class Program
         var speedB = new  Measurement<CompoundUnit<Meter, Second>>(10);
         
         var acceleration = new  Measurement<CompoundUnit<CompoundUnit<Meter, Second>, Second>>(5) ;
-        
+
+        var meter = new Meter();
+        var second = new Second();
+
+        Measurement<CompoundUnit<Meter, Second>>.CreateCompoundUnit(10, new CompoundUnit<Meter, Second>());
     }
 }

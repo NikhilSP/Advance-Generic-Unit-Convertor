@@ -2,5 +2,5 @@ using UnitConvertor.Contract;
 
 namespace UnitConvertor.Model.Measurement;
 
-public class NotDefinedMeasurement<T>() : Measurement<T>(0)
+public class NotDefinedMeasurements<T>() : Measurements<T>(0)
     where T : IUnit;

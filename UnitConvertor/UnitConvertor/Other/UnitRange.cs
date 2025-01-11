@@ -6,10 +6,10 @@ namespace UnitConvertor.Other;
 public class UnitRange<T> : IUnitRange<T>
    where T : IUnit
 {
-   public Measurement<T> Min { get; }
-   public Measurement<T> Max { get; }
+   public Measurements<T> Min { get; }
+   public Measurements<T> Max { get; }
 
-   public UnitRange(Measurement<T> min, Measurement<T> max)
+   public UnitRange(Measurements<T> min, Measurements<T> max)
    {
       Min = min;
       Max = max;
@@ -17,11 +17,11 @@ public class UnitRange<T> : IUnitRange<T>
    
    public UnitRange(double min, double max)
    {
-      Min = new Measurement<T>(min);
-      Max = new Measurement<T>(max);
+      Min = new Measurements<T>(min);
+      Max = new Measurements<T>(max);
    }
 
-   public bool Contains(Measurement<T> value)
+   public bool Contains(Measurements<T> value)
    {
       return Min.Value <= value.Value && value.Value<= Max.Value;
    }

@@ -4,9 +4,9 @@ namespace UnitConvertor.Contract;
 
 public interface IMeasurementMath<T1> where T1 : IUnit
 {
-    Measurement<T1> Abs(Measurement<T1> value);
-    Measurement<T1> Min(Measurement<T1> a, Measurement<T1> b);
-    Measurement<T1> Max(Measurement<T1> a, Measurement<T1> b);
-    Measurement<T1> Ceiling(Measurement<T1> value);
-    Measurement<T1> Floor(Measurement<T1> value);
+    Measurements<T1> Abs(Measurements<T1> value);
+    Measurements<T1> Min(Measurements<T1> a, Measurements<T1> b);
+    Measurements<T1> Max(Measurements<T1> a, Measurements<T1> b);
+    Measurements<T1> Ceiling(Measurements<T1> value);
+    Measurements<T1> Floor(Measurements<T1> value);
 }

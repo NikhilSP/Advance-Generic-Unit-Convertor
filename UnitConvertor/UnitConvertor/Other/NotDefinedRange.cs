@@ -6,6 +6,6 @@ namespace UnitConvertor.Other;
 public class NotDefinedRange<T>:IUnitRange<T>
            where T:IUnit
 {
-    public Measurement<T> Min => new Measurement<T>(double.NaN);
-    public Measurement<T> Max => new Measurement<T>(double.NaN);
+    public Measurements<T> Min => new Measurements<T>(double.NaN);
+    public Measurements<T> Max => new Measurements<T>(double.NaN);
 }

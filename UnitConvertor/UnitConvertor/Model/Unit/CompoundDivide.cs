@@ -3,12 +3,12 @@ using UnitConvertor.Enum;
 
 namespace UnitConvertor.Model.Unit;
 
-public abstract class CompoundUnit<T1, T2> : IUnit
+public class CompoundUnitDivide<T1, T2> : CompoundUnit<T1,T2>
     where T1 : IUnit
     where T2 : IUnit
 {
-    public CompoundUnit()
+    public CompoundUnitDivide()
     {
-      
+        
     }
 }

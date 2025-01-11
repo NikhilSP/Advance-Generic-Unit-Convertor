@@ -1,5 +1,15 @@
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\bin\Debug\net8.0\UnitConvertor.exe
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\bin\Debug\net8.0\UnitConvertor.deps.json
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\bin\Debug\net8.0\UnitConvertor.runtimeconfig.json
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\bin\Debug\net8.0\UnitConvertor.dll
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\bin\Debug\net8.0\UnitConvertor.pdb
 D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.GeneratedMSBuildEditorConfig.editorconfig
 D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.AssemblyInfoInputs.cache
 D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.AssemblyInfo.cs
 D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.csproj.CoreCompileInputs.cache
 D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.sourcelink.json
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.dll
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\refint\UnitConvertor.dll
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.pdb
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\UnitConvertor.genruntimeconfig.cache
+D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\obj\Debug\net8.0\ref\UnitConvertor.dll

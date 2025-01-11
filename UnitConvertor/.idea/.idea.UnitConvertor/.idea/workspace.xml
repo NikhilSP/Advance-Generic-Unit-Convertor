@@ -9,39 +9,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea211ef7-70b5-4cc1-83ad-38bc7b0b51b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Contract/ITemperature.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Contract/IWeight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Convertors/MeasurementConvertor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Measurement/NotDefinedMeasurement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/Celsius.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/Fahrenheit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/Feet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/Gram.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/Pound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.metadata.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.projects.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/unitconvertor.strings.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/UnitConvertor/FileContentIndex/2f2739b7-5350-4519-8831-7f4641f388b9.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/UnitConvertor/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/UnitConvertor/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/UnitConvertor/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/UnitConvertor/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/UnitConvertor/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/UnitConvertor/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/UnitConvertor/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/UnitConvertor/v17/DocumentLayout.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/CompoundDivide.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/CompoundMultiply.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnitConvertor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnitConvertor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Contract/IMeasurementMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Contract/IMeasurementMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Contract/IUnitRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Contract/IUnitRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Convertors/MeasurementConvertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Convertors/MeasurementConvertor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Extensions/MeasurementExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Extensions/MeasurementExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Model/Measurement/Measurement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Model/Measurement/Measurements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Model/Measurement/NotDefinedMeasurement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Model/Measurement/NotDefinedMeasurements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Model/Unit/CompoundUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Model/Unit/CompoundUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Other/MeasurementCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Other/MeasurementCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Other/MeasurementMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Other/MeasurementMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Other/NotDefinedRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Other/NotDefinedRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Other/PrecisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Other/PrecisionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/Other/UnitRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Other/UnitRange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitConvertor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/Debug/net8.0/UnitConvertor.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitConvertor/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UnitConvertor/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/coreclr/System.Private.CoreLib/src/System/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/libraries/System.Private.CoreLib/src/System/Math.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/libraries/System.Private.CoreLib/src/System/Reflection/MethodInvokerCommon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/libraries/System.Private.CoreLib/src/System/Reflection/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9cb3b725e3ad2b57ddc9fb2dd48d2d170563a8f5/src/libraries/System.Private.CoreLib/src/System/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitConvertor/Model/Measurement/Measurements.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitConvertor/Model/Measurement/NotDefinedMeasurements.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2rMuGPuWo43sXc08PLZtGRJ091a" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,6 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.UnitConvertor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -97,7 +113,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -119,5 +138,37 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UnitConvertor/Convertors/MeasurementConvertor.cs</url>
+          <line>57</line>
+          <properties documentPath="D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\Convertors\MeasurementConvertor.cs" containingFunctionPresentation="Method 'ConvertCompoundUnitTo'">
+            <startOffsets>
+              <option value="2072" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2127" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UnitConvertor/Convertors/MeasurementConvertor.cs</url>
+          <line>53</line>
+          <properties documentPath="D:\Nikhil\Projects\Advance-Generic-Unit-Convertor\UnitConvertor\UnitConvertor\Convertors\MeasurementConvertor.cs" containingFunctionPresentation="Method 'ConvertCompoundUnitTo'">
+            <startOffsets>
+              <option value="1812" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1915" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

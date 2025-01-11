@@ -6,6 +6,7 @@ using Meter = UnitConvertor.Model.Unit.Meter;
 
 namespace UnitConvertor.Convertors;
 
+// Uses reflection for nested compound units
 public class MeasurementConvertor
 {
     private MethodInfo _convertToMethod;
@@ -15,24 +16,6 @@ public class MeasurementConvertor
         var convertToMethod = typeof(MeasurementConvertor).GetMethod("ConvertCompoundUnitTo");
         _convertToMethod = convertToMethod ?? throw new Exception();
     }
-
-    private readonly Dictionary<(Type, Type), Func<double, double>> _lengthConverters = new()
-    {
-        { (typeof(Meter), typeof(Feet)), v => v * 3.28084 },
-        { (typeof(Feet), typeof(Meter)), v => v * 0.3048 },
-    };
-
-    private readonly Dictionary<(Type, Type), Func<double, double>> _temperatureConverters = new()
-    {
-        { (typeof(Celsius), typeof(Fahrenheit)), v => (v * 9 / 5) + 32 },
-        { (typeof(Fahrenheit), typeof(Celsius)), v => (v - 32) * 5 / 9 }
-    };
-
-    private readonly Dictionary<(Type, Type), Func<double, double>> _weightConverters = new()
-    {
-        { (typeof(Gram), typeof(Pound)), v => v * 2.20462 },
-        { (typeof(Pound), typeof(Gram)), v => v * 0.453592 }
-    };
 
     public Measurements<T2> ConvertTo<T1, T2>(Measurements<T1> measurement)
         where T1 : IUnit
@@ -140,15 +123,17 @@ public class MeasurementConvertor
     {
         if (typeof(ILength).IsAssignableFrom(typeof(T1)) && typeof(ILength).IsAssignableFrom(typeof(T2)))
         {
-            return _lengthConverters;
+            return ConvertorFormulas.LengthConverters;
         }
-        else if (typeof(IWeight).IsAssignableFrom(typeof(T1)) && typeof(IWeight).IsAssignableFrom(typeof(T2)))
+
+        if (typeof(IWeight).IsAssignableFrom(typeof(T1)) && typeof(IWeight).IsAssignableFrom(typeof(T2)))
         {
-            return _weightConverters;
+            return ConvertorFormulas.WeightConverters;
         }
-        else if (typeof(ITemperature).IsAssignableFrom(typeof(T1)) && typeof(ITemperature).IsAssignableFrom(typeof(T2)))
+
+        if (typeof(ITemperature).IsAssignableFrom(typeof(T1)) && typeof(ITemperature).IsAssignableFrom(typeof(T2)))
         {
-            return _temperatureConverters;
+            return ConvertorFormulas.TemperatureConverters;
         }
 
         return new();

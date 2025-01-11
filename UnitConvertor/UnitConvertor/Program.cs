@@ -1,4 +1,4 @@
-﻿using UnitConvertor.Convertors;
+using UnitConvertor.Convertors;
 using UnitConvertor.Model.Measurement;
 using UnitConvertor.Model.Unit;
 

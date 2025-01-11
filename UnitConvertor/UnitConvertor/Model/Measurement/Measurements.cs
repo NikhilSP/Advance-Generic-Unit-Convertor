@@ -1,4 +1,4 @@
-﻿using UnitConvertor.Contract;
+using UnitConvertor.Contract;
 using UnitConvertor.Enum;
 using UnitConvertor.Model.Unit;
 
